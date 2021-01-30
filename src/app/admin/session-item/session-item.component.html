@@ -1,0 +1,22 @@
+<h2>{{session.nom}}</h2>
+<div>{{session.track}}</div>
+<div>Prévue le {{session.date | date}}  pendant {{session.nbrJ}} jours à {{session.localisation}}</div>
+<li *ngIf="session.nbrParticipants < 20;then ok else notok"></li>
+<ng-template #ok>Encore {{20 - session.nbrParticipants}} places sont disponibles!</ng-template>
+<ng-template #notok>Session complète!</ng-template>
+<div>{{session.nbrParticipants}} Participants</div>
+<div class="tools">
+  <a class="delete" (click)="onDelete(session._id)">
+    Suppression
+  </a>
+  <a [routerLink]="['../edit', session.id]"
+routerLinkActive="active" class="inscrire">
+Modification
+</a>
+</div>
+<!-- nom:String,
+track:String,
+date:Date,
+nbrJ:Number,
+localisation:String,
+nbrParticipants:Number -->

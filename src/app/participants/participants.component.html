@@ -1,0 +1,31 @@
+<div class="container">
+  <button  type="button" style="background-color: white; border-color: white; " class="" (click)="refresh()"> <img src="../../assets/actualiser.png"  height="50px" width="50px"></button>  <a routerLink="/ajoutParticipant"><img src="../../assets/ajouter.png"  height="50px" width="50px"></a>
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Nom</th>
+            <th scope="col">Prenom</th>
+            <th scope="col">Adresse</th>
+            <th scope="col">Email</th>
+            <th scope="col">Societe</th>
+            <th scope="col">Poste</th>
+
+            <th></th>
+
+          </tr>
+        </thead>
+        <tbody *ngFor="let p of participants">
+          <tr>
+            <td>{{p.nom}}</td>
+            <td>{{p.prenom}}</td>
+            <td>{{p.adresse}}</td>
+            <td>{{p.email}}</td>
+            <td>{{p.societe}}</td>
+            <td>{{p.poste}}</td>
+
+            <td> <button  type="button" style="background-color: white; border-color: white; "  class="" (click)="edit(p._id)">  <img src="../../assets/modif.png" height="50px" width="50px" alt=""></button> <button type="button" style="background-color: white; border-color: white; " class="" (click)="Supprimer(p._id)"><img src="../../assets/supprimer.png"  height="50px" width="50px"></button></td>
+
+ 
+        </tbody>
+      </table>
+</div>

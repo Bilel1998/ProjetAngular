@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SessionService } from './session.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'tpAngular';
+  actualDate = new Date();
+  SessionService: SessionService;
+  title = 'training-app-D';
+  name = "Walid SAAD";
+  //session_name = "Formation Mobile";
+  nbpart: number=0;
+  
+  firstSession= {
+    id: 1,
+    name: 'Formation Angular',
+    track: 'MEAN Stack',
+    date: new Date('2020-11-19'),
+    duree: 3,
+    local: 'Tunis',
+    participants: 0
+  }
+  nbrParticipantsChange (event)
+  {
+   this.nbpart = event.value;
+  }
+  
 }

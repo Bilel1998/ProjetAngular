@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row" style="margin-top: 50px;">
+    <div class="col-4">
+      <div class=" container" style="background-color: chocolate;">
+        <img src="../../assets/sessions.png" alt="" height="150px" width="150px">
+        <span style="color: white;"> {{sessionItems.length}} Sessions</span>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="container" style="background-color: teal;">
+        <img src="../../assets/Participants.png" alt="" height="150px" width="150px">
+        <span style="color: white;"> {{participants.length}} Participants </span>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="container" style="background-color: #8815A6;">
+        <img src="../../assets/Formateurs.png" alt="" height="150px" width="150px">
+        <span style="color: white;"> {{formateurs.length}} foramateurs</span>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 100px;">
+    <div class="col-6">
+      <table class="table table-hover" style="margin: 10px;">
+        <thead>
+          <tr>
+            <th scope="col">Track</th>
+            <th scope="col">Nombre De Sessions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let t of tab'>
+            <td *ngIf="t.nbr>0">{{t.session}}</td>
+            <td *ngIf="t.nbr>0">{{t.nbr}}</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+    <div class="col-6">
+      <table class="table table-hover" style="margin: 10px;">
+        <thead>
+          <tr>
+            <th scope="col">Top Formateur</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let f of formateurs">
+            <td>{{f.nom}} {{f.prenom}}</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

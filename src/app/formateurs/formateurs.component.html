@@ -1,0 +1,28 @@
+<div class="container">
+  <button  type="button" style="background-color: white; border-color: white; " class="" (click)="refresh()"> <img src="../../assets/actualiser.png"  height="50px" width="50px"></button> <a routerLink="/ajoutFormateur"> <img src="../../assets/ajouter.png"  height="50px" width="50px"></a>
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Nom</th>
+            <th scope="col">Prenom</th>
+            <th scope="col">Adresse</th>
+            <th scope="col">Email</th>
+            <th scope="col">Domaine d'expertise</th>
+            <th></th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr  *ngFor="let f of formateurs">
+            <td>{{f.nom}}</td>
+            <td>{{f.prenom}}</td>
+            <td>{{f.adresse}}</td>
+            <td>{{f.email}}</td>
+            <td>{{f.domaine}}</td>
+
+            <td><button  type="button" style="background-color: white; border-color: white; "  class="" (click)="edit(f._id)">  <img src="../../assets/modif.png" height="50px" width="50px" alt=""></button><button  type="button" style="background-color: white; border-color: white; "  class="" (click)="Supprimer(f._id)"> <img src="../../assets/supprimer.png"  height="50px" width="50px"></button></td>
+
+    
+        </tbody>
+      </table>
+</div>
